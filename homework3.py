@@ -67,8 +67,6 @@ def modify_test(name, modified_name):
     wait_for_modified_message()
     appear_location_name(new_name)
 
-
-#river.get("http://www.learnwebservices.com/locations/?size=100")
 #create_location("Piripócs", "1.12,1.1")
 #appear_location_name("Piripócs")
 #wait_for_appier("Bla-bla-city")
