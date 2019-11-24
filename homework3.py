@@ -71,4 +71,4 @@ def modify_test(name, modified_name):
 #appear_location_name("Piripócs")
 #wait_for_appier("Bla-bla-city")
 
-modify_test("Teszt_City", "Modified_City")
+modify_test("Test_City", "Modified_City")
