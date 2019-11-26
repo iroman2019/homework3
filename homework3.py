@@ -74,10 +74,10 @@ def delete_location_by_name(name):
     driver.switch_to.alert.accept()
 
 def wait_for_disappear_location(name):
-    WebDriverWait(driver, 100).until(
-        expected_conditions.NoSuchElementException()
-        )
-    print(driver.find_element(By.XPATH, "//tr[td[text()='" + name + "']]/td[2]").text)
+    xpath = "//tr[td[text()='" + name + "']]"
+    WebDriverWait(driver, 10).until_not(
+        expected_conditions.presence_of_element_located((By.XPATH, xpath))
+    )
 
 def delete_test(name):
     driver.get("http://www.learnwebservices.com/locations/?size=100")
@@ -85,7 +85,6 @@ def delete_test(name):
     print("Törlöm: " + name_with_timestamp + "-t")
     delete_location_by_name(name_with_timestamp)
     wait_for_message("Location has deleted")
-    driver.get("http://www.learnwebservices.com/locations/?size=100")
     wait_for_disappear_location(name_with_timestamp)
 
 #create_location("Piripócs", "1.12,1.1")
